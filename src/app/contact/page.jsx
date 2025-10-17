@@ -2,14 +2,19 @@ import { copyRight } from "@/date"
 import Link from "next/link"
 
 const Page = () => {
-  const pageLink = '/'
+  const pageLink = "/"
 
   return (
     <div className="flex flex-col lg:flex-row w-full min-h-screen font-sans">
       
-      {/* Left Section (Image) */}
-      <div className="lg:w-1/2 w-full h-[40vh] lg:h-screen bg-no-repeat bg-[url('/image/alan.jpg')] bg-center bg-cover flex justify-center items-center text-3xl text-white font-bold bg-teal-700">
-        <span className="w-4/5 md:w-2/3 font-bold text-center px-2">
+      {/* Left Section (Image with overlay) */}
+      <div className="relative lg:w-1/2 w-full h-[40vh] lg:h-screen bg-no-repeat bg-[url('/image/alan.jpg')] bg-center bg-cover flex justify-center items-center text-3xl text-white font-bold">
+        
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/60"></div>
+
+        {/* Text content */}
+        <span className="relative w-4/5 md:w-2/3 font-bold text-center px-2 z-10">
           Let's Make Something Memorable
         </span>
       </div>
@@ -36,7 +41,7 @@ const Page = () => {
           placeholder="Your Message"
         ></textarea>
         <button
-          className="w-full max-w-md bg-teal-700 text-white rounded-xl py-2 px-3 hover:bg-teal-800 transition-all duration-300"
+          className="w-full max-w-md bg-emerald-700 text-white rounded-xl py-2 px-3 hover:bg-emerald-800 transition-all duration-300"
           type="submit"
         >
           Send Message
