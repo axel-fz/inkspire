@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "../../../../../dev web/React"
+		},
+		{
+			"path": "../../../../../dev web/React/react_from_scratch"
+		},
+		{
+			"path": "../../../../../dev web/React/react hooks"
+		},
+		{
+			"path": "../../../.."
+		},
+		{
+			"path": "../../../../../revision/display grid"
+		},
+		{
+			"path": "../../../../../revision"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "display grid"
+	}
+}
