@@ -18,7 +18,7 @@ const Page = () => {
     }, [router])
     // logout a user 
     const handleLogout = () => {
-        localStorage.removeItem('user')
+       // localStorage.removeItem('user')
         router.replace('/login')
     }
     if (!user) {
