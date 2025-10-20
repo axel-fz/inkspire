@@ -14,7 +14,7 @@ const Page = () => {
         <div className="absolute inset-0 bg-black/60"></div>
 
         {/* Text content */}
-        <span className="relative w-4/5 md:w-2/3 font-bold text-center px-2 z-10">
+        <span className="relative w-4/5 md:w-2/3 text-6xl  text-center px-2 z-10">
           Let's Make Something Memorable
         </span>
       </div>
