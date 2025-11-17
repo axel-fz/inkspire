@@ -4,25 +4,26 @@ import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
-import MainContent from '@/components/MainContent'
 import RightSection from '@/components/RightSection'
 
-const Page = () => {
+export default function Layout({ children }) {
     const [user, setUser] = useState(null)
     const router = useRouter()
+    const [isOpen, setIsOpen] = useState(true);
 
     useEffect(() => {
         //getting user data from the local storage || check if user exist
         const userGotten = JSON.parse(localStorage.getItem('user'))
         if (!userGotten || !userGotten.email) {
             router.replace('/login') // redirect client-side
+            
         } else {
             setUser(userGotten)
         }
     }, [router])
     // logout a user 
     const handleLogout = () => {
-       // localStorage.removeItem('user')
+        // localStorage.removeItem('user')
         router.replace('/login')
     }
     if (!user) {
@@ -36,20 +37,33 @@ const Page = () => {
     }
     return (
         <>
-            <Navbar />
-            <div className="w-full flex ">
-              {/*side bar */}
-              <Sidebar />
-              {/*end side bar */}
-              {/*main content */}
-              <MainContent />
-              {/*end main content */}
-              {/*rigth section */}
-              <RightSection />
-              {/*end rigth section */}
+
+
+            <div className="w-full justify-between flex ">
+
+                
+                <div className="flex ">
+                    {/* Sidebar */}
+                    <Sidebar isOpen={isOpen} />
+
+                    {/* Main content area */}
+                    <div
+                        className={`transition-all duration-500 flex-1 ${isOpen ? 'pl-[80px] ' : 'pl-[80px] ml-[-150px]'
+                            }`}
+                    >
+                        <Navbar setIsOpen={setIsOpen} />
+                        <main > {children}</main>
+                    </div>
+                </div>
+
+
+                {/*rigth section */}
+                <RightSection />
+                {/*end rigth section */}
             </div>
+
         </>
     )
 }
 
-export default Page
+

@@ -48,7 +48,7 @@ const Page = () => {
         </button>
 
         {/* Optional footer text */}
-        <p className="text-gray-500 text-sm mt-6">{copyRight}</p>
+        <p className="text-gray-500 text-sm mt-6">{copyRight} </p>
       </form>
     </div>
   )

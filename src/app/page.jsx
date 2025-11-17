@@ -5,7 +5,8 @@ import Link from "next/link"
 
 const Page = () => {
   return (
-    <main className="bg-white text-gray-900  overflow-x-hidden">
+    
+    <main className="bg-white  text-gray-900  overflow-x-hidden">
       <section className="flex flex-col h-screen  md:flex-row items-center justify-between px-12 md:px-25 bg-gradient-to-b from-emerald-900 to-emerald-700 text-white relative overflow-hidden">
         <div className="md:w-1/2  z-10">
           <Image
