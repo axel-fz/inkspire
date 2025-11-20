@@ -6,13 +6,14 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useTheme } from "next-themes";
 
 const Page = () => {
   const router = useRouter();
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [showPassword, setShowPassword] = React.useState(false);
-
+  const [theme, setTheme] = useTheme()
   // Validation functions
   const isValidEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -66,7 +67,7 @@ const Page = () => {
 
       <div className="flex opacity-83 md:opacity-100 flex-col md:flex-row w-full max-w-4xl bg-white rounded-lg shadow-lg overflow-hidden ring ring-emerald-700">
         {/* Form Section */}
-        <div className="w-full md:w-1/2 p-6 md:p-10 flex flex-col justify-center">
+        <div className="w-full md:w-1/2  p-6 md:p-10 flex flex-col justify-center">
           <div className="flex justify-center md:justify-start">
             <Image
               src="/image/logo.png"

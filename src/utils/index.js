@@ -7,3 +7,4 @@ export const slugify = (title) => {
         .trim()
         .replace(/\s+/g, "-");
 };
+ export const formatName = (username = "") => username.trim().split(" ").map(w => w[0]?.toUpperCase()).join("");

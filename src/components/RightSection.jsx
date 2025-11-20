@@ -72,16 +72,16 @@ const RightSection = () => {
       {/* ===== Recommended Topics ===== */}
       <section>
         <h2 className="text-center text-md font-bold mb-2">Recommended topics</h2>
-        <div className="grid gap-2 grid-cols-2">
+        <div className="grid dark:bg-black  bg-white gap-2 grid-cols-2">
           {topics.map((topic, i) => (
             <div
               key={i}
-              className="p-2 text-nowrap text-center bg-gray-200 hover:bg-gray-300 rounded-full cursor-pointer text-sm font-medium"
+              className="p-2 text-nowrap dark:text-white text-white text-center bg-gray-400 dark:bg-gray-900 hover:bg-gray-300 rounded-full cursor-pointer text-sm font-medium"
             >
               {topic}
             </div>
           ))}
-          <span className="col-span-2 text-center text-gray-400 hover:underline cursor-pointer mt-2">
+          <span className="col-span-2  text-center text-gray-400 hover:underline cursor-pointer mt-2">
             See more topics
           </span>
         </div>
@@ -98,7 +98,7 @@ const RightSection = () => {
                 <p className="font-semibold text-sm">{p.name}</p>
                 <p className="text-sm text-gray-500">{p.bio}</p>
               </div>
-              <button className="px-3 py-1 text-sm bg-white text-black border border-black rounded-full hover:bg-gray-800 hover:text-white transition">
+              <button className="px-3 py-1 text-sm bg-gray-400 dark:bg-gray-900 text-white  rounded-full hover:bg-gray-800 hover:text-white transition">
                 Follow
               </button>
             </li>

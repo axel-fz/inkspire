@@ -29,7 +29,7 @@ const Sidebar = ({ isOpen }) => {
 
   return (
     <div
-      className={`fixed top-0 left-0 h-screen w-60 bg-white border-r border-gray-300 px-5 pt-25 transition-transform duration-300 ease-in-out z-20
+      className={`fixed top-0 left-0 h-screen w-60  border-r border-gray-300 px-5 pt-25 transition-transform duration-300 ease-in-out z-20
       ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}
     >
       <ul>
@@ -37,7 +37,7 @@ const Sidebar = ({ isOpen }) => {
           <li key={link.name}>
             <Link
               href={`/${link.name}`}
-              className="flex items-center gap-3 py-2 px-2 hover:bg-gray-200 rounded-lg cursor-pointer mb-1"
+              className="flex dark:hover:text-black items-center gap-3 py-2 px-2 hover:bg-gray-200 rounded-lg cursor-pointer mb-1"
             >
               {link.icon}
               <span className={`capitalize text-md ${path == '/' + link.name && 'text-emerald-800 font-bold'}`}>
@@ -52,15 +52,15 @@ const Sidebar = ({ isOpen }) => {
 
       <Link
         href="/"
-        className="flex items-center gap-3 py-2 px-2 hover:bg-gray-200 rounded-lg cursor-pointer mb-2"
+        className="flex items-center gap-3 py-2 px-2 dark:hover:text-black  hover:bg-gray-200 rounded-lg cursor-pointer mb-2"
       >
         <FiUsers size={24} />
-        <span className="capitalize text-md">Following</span>
+        <span className="capitalize text-md dark:hover:text-black">Following</span>
       </Link>
 
       <button
         onClick={handleLogout}
-        className="flex items-center gap-3 py-2 px-2 hover:bg-gray-200 rounded-lg cursor-pointer w-full text-left"
+        className="flex items-center gap-3 py-2 px-2 dark:hover:text-black hover:bg-gray-200 rounded-lg cursor-pointer w-full text-left"
       >
         <RiLogoutBoxLine size={24} />
         <span className="capitalize text-md">Log out</span>

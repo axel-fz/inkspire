@@ -3,10 +3,9 @@ import React from "react";
 import moment from "moment";
 import { FaComment, FaRegBookmark } from "react-icons/fa6";
 import Link from "next/link";
-import { slugify } from "@/utils";
+import { formatName, slugify } from "@/utils";
 
 const PostCard = ({ image, description, title, name, date }) => {
-    const formatName = (username = "") => username.trim().split(" ").map(w => w[0]?.toUpperCase()).join("");
     const url = slugify(title)
     return (
     <div className="flex gap-5 justify-between min-w-[800px] m-5 py-5 border-b border-gray-300">
@@ -22,11 +21,11 @@ const PostCard = ({ image, description, title, name, date }) => {
 
           {/* Post Content */}
           <Link href={`/posts/${url}`} className="my-3 font-bold text-2xl w-[500px]">{title}</Link>
-          <p className="text-gray-600 text-wrap w-[400px]">{description}</p>
+          <p className="text-gray-600 dark:text-white text-wrap w-[400px]">{description}</p>
 
           {/* Post Meta */}
-          <div className="flex items-center gap-5 mt-3 text-gray-500">
-            <p className="font-semibold">{moment(date).fromNow()}</p>
+          <div className="flex dark:text-white items-center gap-5 mt-3 text-gray-500">
+            <p className="font-semibold ">{moment(date).fromNow()}</p>
             <FaComment size={18} color="gray" />
             <FaRegBookmark size={18} color="gray" />
           </div>
